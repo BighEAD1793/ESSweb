@@ -1,0 +1,27 @@
+@import "general";
+
+.section{
+  &--fill{
+    background-color: $c-base;
+  }
+
+  .section-inner{
+    max-width: 1024px;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+}
+
+.row{
+  overflow: hidden;
+  .col{
+    float: left;
+    display: block;
+  }
+  &--3{
+    .col{
+      width:33.3%;
+    }
+  }
+}

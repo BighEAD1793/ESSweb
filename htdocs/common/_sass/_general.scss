@@ -1,0 +1,24 @@
+//valuables
+
+//-color scheme
+$c-lighter: #8080B3;
+$c-light: #565695;
+$c-base: #343477;
+$c-dark: #1A1A59;
+$c-darker: #09093B;
+
+
+
+//sizing
+
+@mixin sp{
+  @media only screen and (min-width: 640px){
+    @content;
+  }
+}
+@mixin tb{
+  @media only screen and (min-width: 768px){
+    @content;
+  }
+}
+
