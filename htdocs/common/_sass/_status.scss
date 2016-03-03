@@ -1,0 +1,50 @@
+#js-slidePhoto{
+  overflow: hidden;
+  .js-slidePhoto-list{
+    position:relative;
+    width: 100%;
+    li{
+      width: 50%;
+      height: 50%;
+      position: absolute;
+      display: none;
+      overflow: hidden;
+      img{
+        width: 100%;
+      }
+      &.show0{
+        display: block;
+        top: 0;
+        left: 0;
+      }
+      &.show1{
+        display: block;
+        top: 0;
+        left: 50%;
+      }
+      &.show2{
+        display: block;
+        top: 50%;
+        left: 50%;
+      }
+      &.show3{
+        display: block;
+        top: 50%;
+        left: 0;
+      }
+    }
+    @media (max-width: 768px){
+      width: 200%;
+      height: 200%;
+    }
+  }
+  .js-slidePhoto-blank2 , .js-slidePhoto-blank1{
+    position: absolute;
+    background-color: #1b1b1b;
+    width: 50%;
+    @media (max-width: 768px){
+      display: none;
+    }
+  }
+}
+

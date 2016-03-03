@@ -1,14 +1,14 @@
 //valuables
-
+  $c-bg: #1b1b1b;
 //sizing
 
 @mixin sp{
-  @media only screen and (min-width: 640px){
+  @media only screen and (max-width: 640px){
     @content;
   }
 }
 @mixin tb{
-  @media only screen and (min-width: 768px){
+  @media only screen and (max-width: 768px){
     @content;
   }
 }

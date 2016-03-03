@@ -1,2 +1,67 @@
 @import "general";
+@import "general";
+
+//sections
+
+.section{
+  padding-bottom: 128px;
+  .section+&{
+    &::before{
+      display: block;
+      content: "";
+      width: 30%;
+      height: 1px;
+      margin: 0 auto;
+      background-color: #333;
+      border-bottom: #000 2px solid;
+    }
+  }
+  .section-inner{
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+//row-cols
+
+.row{
+  overflow: hidden;
+  height: auto;
+  .row-col{
+    float: left;
+    display: block;
+    box-sizing: border-box;
+    margin-right: 16px;
+  }
+
+  &--331{
+    .row-col{
+      width: calc((100% - 32px) / 3);
+      &:nth-of-type(3n){
+        margin-right: 0;
+      }
+      @include sp{
+        width: 100%;
+        margin:16px 0 0;
+      }
+    }
+  }
+
+  &--ms{
+    .row-col--main{
+      width: calc(70% - 16px);
+      @include sp{
+        width: 100%;
+      }
+    }
+    .row-col--sub{
+      width: 30%;
+      margin-right: 0;
+      @include sp{
+        width: 100%;
+      }
+    }
+  }
+}
 
