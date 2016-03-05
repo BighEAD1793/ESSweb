@@ -224,13 +224,19 @@ p {
       color: #f0e68c; }
   .tree--lv2 {
     margin-top: 22px;
-    margin-left: 12px; }
+    margin-left: 12px;
+    margin-bottom: 36px; }
+    .para > .tree--lv2 {
+      display: inline-block;
+      margin: 0 auto; }
     .tree--lv2 > .tree-el {
-      font-size: 22px; }
+      font-size: 22px;
+      margin-bottom: 12px; }
       .tree--lv2 > .tree-el::before {
         content: "▽";
         font-size: 16px;
-        text-align: top; }
+        vertical-align: 20%;
+        margin-right: 4px; }
   .tree--lv3 {
     margin-left: 12px;
     margin-top: 14px;

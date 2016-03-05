@@ -150,12 +150,19 @@
   &--lv2{
     margin-top: 22px;
     margin-left: 12px;
+    margin-bottom: 36px;
+    .para>&{
+      display: inline-block;
+      margin: 0 auto;
+    }
     &>.tree-el{
       font-size: 22px;
+      margin-bottom: 12px;
       &::before{
         content: "▽";
         font-size: 16px;
-        text-align: top;
+        vertical-align: 20%;
+        margin-right: 4px;
       }
     }
   }
