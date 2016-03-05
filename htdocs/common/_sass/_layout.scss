@@ -28,6 +28,9 @@
 .row{
   overflow: hidden;
   height: auto;
+  &:first-child{
+    margin-top: 48px;
+  }
   .row-col{
     float: left;
     display: block;

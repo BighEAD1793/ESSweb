@@ -57,7 +57,7 @@
 
 .h--lv2{
   text-align: center;
-  margin: 48px 0;
+  padding: 48px 0;
   .h-main{
     font-family: "Roboto";
     font-weight: 100;
@@ -137,4 +137,35 @@
   }
 }
 
-
+.tree{
+  list-style: none;
+  color: #cccccc;
+  &--lv1{
+    margin-top: 28px;
+    &>.tree-el{
+      font-size: 28px;
+      color: #f0e68c;
+    }
+  }
+  &--lv2{
+    margin-top: 22px;
+    margin-left: 12px;
+    &>.tree-el{
+      font-size: 22px;
+      &::before{
+        content: "▽";
+        font-size: 16px;
+        text-align: top;
+      }
+    }
+  }
+  &--lv3{
+    margin-left: 12px;
+    margin-top: 14px;
+    margin-bottom: 28px;
+    &>.tree-el{
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+  }
+}
