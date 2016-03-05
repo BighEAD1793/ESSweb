@@ -53,12 +53,21 @@ table {
 
 //default base
 
-main{
+html{
   font-size: 16px;
   font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
   background-color: #1b1b1b;
+  color: #cccccc;
 }
 
 p{
   line-height: 1.5em;
+}
+
+a{
+  text-decoration: none;
+  color: lightblue;
+  &::hover{
+    color: #f0e68c;
+  }
 }

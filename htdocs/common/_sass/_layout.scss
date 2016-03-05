@@ -68,3 +68,44 @@
   }
 }
 
+//header
+header{
+  background-color: #010427;
+  overflow: hidden;
+  .header-inner{
+    width: 100%;
+    max-width: 960px;
+    margin:0 auto;
+    height: 40px;
+    .header-id{
+      float: left;
+      display: inline-block;
+      font-family:"Roboto";
+      font-weight: 700;
+      font-size: 32px;
+      color: white;
+      margin-top: 4px;
+    }
+    .header-nav{
+      float: right;
+      display: block;
+      height: 100%;
+      .header-nav-inner{
+        list-style: none;
+        display: table;
+        height: 100%;
+        .header-nav-el{
+          display: table-cell;
+          vertical-align: middle;
+          font-family:"Roboto";
+          font-size: 18px;
+          font-weight: 100;
+          width: 120px;
+          &>a{
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
