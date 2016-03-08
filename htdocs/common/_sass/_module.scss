@@ -28,6 +28,9 @@
       width: 100%;
       top: 42%;
       left: 0;
+      @include sp{
+        font-size: 36px;
+      }
     }
   }
 }
@@ -59,12 +62,18 @@
 .h--lv2{
   text-align: center;
   padding: 48px 0;
+  @include sp{
+    padding: 24px;
+  }
   .h-main{
     font-family: "Roboto";
     font-weight: 100;
     font-size: 48px;
     color: #cccccc;
     margin-bottom: 12px;
+    @include sp{
+      font-size:28px;
+    }
     &::after{
       content: "";
       border-bottom: 1px solid #cccccc;
@@ -77,6 +86,9 @@
   .h-ruby{
     color: #f0e68c;
     font-size: 24px;
+    @include sp{
+      font-size: 18px;
+    }
   }
 }
 
@@ -84,12 +96,19 @@
   font-size: 24px;
   color: #f0e68c;
   margin-top: 52px;
+  @include sp{
+    font-size:18px;
+    margin-top: 16px;
+  }
 }
 
 .h--lv4{
   font-size: 20px;
   color: #cccccc;
   margin-top: 18px;
+  @include sp{
+    font-size: 16px;
+  }
 }
 
 .para{
@@ -97,6 +116,10 @@
   padding-top: 64px;
   color: #cccccc;
   text-align: center;
+  @include sp{
+    font-size: 16px;
+    padding-top: 12px;
+  }
   .h--lv3 + &, .h--lv4 + &{
     margin-left: 12px;
   }
@@ -105,6 +128,9 @@
     padding-top: 14px;
     margin-bottom: 28px;
     text-align: left;
+    @include sp{
+      font-size: 14px;
+    }
   }
 }
 
@@ -170,49 +196,71 @@
 .tree{
   list-style: none;
   color: #cccccc;
+  h2 + &{
+    margin-top: 1em;
+  } 
+  .tree-el{
+    line-height: 1.5em;
+  }
+  .tree-br{
+    margin-bottom: 1.5em;
+  }
   &--lv1{
-    margin-top: 28px;
     &>.tree-el{
       font-size: 28px;
       color: #f0e68c;
+      margin-bottom: 1em;
+      @include sp{
+        font-size: 20px;
+      }
     }
   }
   &--lv2{
-    margin-top: 22px;
     margin-left: 12px;
-    margin-bottom: 36px;
     &>.tree-el{
       font-size: 22px;
-      margin-bottom: 12px;
+      margin-bottom: 0.5em;
+      @include sp{
+        font-size: 18px;
+      }
       &::before{
-        content: "▽";
-        font-size: 16px;
-        vertical-align: 20%;
-        margin-right: 4px;
+        content: "";
+        display: inline-block;
+        background-image: url("/common/img/listArrow.svg");
+        background-size: 0.8em 0.8em;
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        width: 1em;
+        height: 1em;
       }
     }
   }
   &--lv3{
-    margin-left: 12px;
-    margin-top: 14px;
-    margin-bottom: 28px;
+    margin-left: 32px;
     &>.tree-el{
       font-size: 16px;
-      margin-bottom: 8px;
+      margin-bottom: 0;
+      @include sp{
+        font-size: 14px;
+      }
     }
   }
   &--lv4{
     margin-left: 12px;
-    margin-top: 14px;
-    margin-bottom: 28px;
     &>.tree-el{
       font-size: 16px;
-      margin-bottom: 8px;
-      &::before{
-        content: "▽";
+      @include sp{
         font-size: 14px;
-        vertical-align: center;
-        margin-right: 4px;
+      }
+      &::before{
+        content: "";
+        display: inline-block;
+        background-image: url("/common/img/listArrow.svg");
+        background-size: 0.8em 0.8em;
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        width: 1em;
+        height: 1em;
       }
     }
   }

@@ -63,6 +63,9 @@ a {
 
 .section {
   padding-bottom: 128px; }
+  @media only screen and (max-width: 640px) {
+    .section {
+      padding-bottom: 24px; } }
   .section + .section::before {
     display: block;
     content: "";
@@ -108,37 +111,100 @@ a {
 
 header {
   background-color: #010427;
-  overflow: hidden; }
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3; }
   header .header-inner {
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
-    height: 40px; }
-    header .header-inner .header-id {
-      float: left;
-      display: inline-block;
-      font-family: "Roboto";
-      font-weight: 700;
-      font-size: 32px;
-      color: white;
-      margin-top: 4px; }
-    header .header-inner .header-nav {
-      float: right;
-      display: block;
+    height: 40px;
+    position: relative; }
+    header .header-inner .header-inner-inner {
+      background-color: #010427;
       height: 100%; }
+      header .header-inner .header-inner-inner .header-id {
+        display: inline-block;
+        position: relative;
+        top: 4px;
+        left: 0;
+        font-family: "Roboto";
+        font-weight: 700;
+        font-size: 32px;
+        color: white;
+        letter-spacing: 0.1em; }
+      header .header-inner .header-inner-inner .header-nav-btn {
+        display: none; }
+    header .header-inner .header-nav {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 50%; }
       header .header-inner .header-nav .header-nav-inner {
         list-style: none;
         display: table;
-        height: 100%; }
+        height: 100%;
+        width: 100%; }
         header .header-inner .header-nav .header-nav-inner .header-nav-el {
           display: table-cell;
           vertical-align: middle;
           font-family: "Roboto";
-          font-size: 18px;
-          font-weight: 100;
-          width: 120px; }
+          font-size: 22px;
+          font-weight: 100; }
           header .header-inner .header-nav .header-nav-inner .header-nav-el > a {
             color: white; }
+    @media only screen and (max-width: 640px) {
+      header .header-inner .header-inner-inner {
+        position: relative;
+        z-index: 3; }
+        header .header-inner .header-inner-inner .header-id {
+          font-size: 28px;
+          top: 6px; }
+        header .header-inner .header-inner-inner .header-nav-btn {
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 40px;
+          width: 40px;
+          background-image: url("/common/img/headerMenu.svg");
+          background-position: 50% 50%;
+          background-repeat: no-repeat;
+          background-size: 28px 28px; }
+      header .header-inner .header-nav {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height: auto; }
+        header .header-inner .header-nav .header-nav-inner {
+          transition: .3s;
+          display: block;
+          position: absolute;
+          top: -200%;
+          height: auto;
+          width: 100%;
+          z-index: 2;
+          background-color: #3F415A; }
+          header .header-inner .header-nav .header-nav-inner .header-nav-el {
+            display: block;
+            text-align: center;
+            width: 100%;
+            padding: 8px 0;
+            border-top: #010427 1px solid; }
+            header .header-inner .header-nav .header-nav-inner .header-nav-el:last-child {
+              border-bottom: #010427 1px solid; }
+            header .header-inner .header-nav .header-nav-inner .header-nav-el > a {
+              display: block;
+              width: 100%;
+              height: 100%; }
+        header .header-inner .header-nav.showing .header-nav-inner {
+          top: 100%; } }
+
+main {
+  margin-top: 40px; }
 
 .visual {
   position: relative;
@@ -167,6 +233,9 @@ header {
       width: 100%;
       top: 42%;
       left: 0; }
+      @media only screen and (max-width: 640px) {
+        .visual .visual-title .visual-title-inner {
+          font-size: 36px; } }
 
 .topLink {
   position: relative;
@@ -191,12 +260,18 @@ header {
 .h--lv2 {
   text-align: center;
   padding: 48px 0; }
+  @media only screen and (max-width: 640px) {
+    .h--lv2 {
+      padding: 24px; } }
   .h--lv2 .h-main {
     font-family: "Roboto";
     font-weight: 100;
     font-size: 48px;
     color: #cccccc;
     margin-bottom: 12px; }
+    @media only screen and (max-width: 640px) {
+      .h--lv2 .h-main {
+        font-size: 28px; } }
     .h--lv2 .h-main::after {
       content: "";
       border-bottom: 1px solid #cccccc;
@@ -207,22 +282,36 @@ header {
   .h--lv2 .h-ruby {
     color: #f0e68c;
     font-size: 24px; }
+    @media only screen and (max-width: 640px) {
+      .h--lv2 .h-ruby {
+        font-size: 18px; } }
 
 .h--lv3 {
   font-size: 24px;
   color: #f0e68c;
   margin-top: 52px; }
+  @media only screen and (max-width: 640px) {
+    .h--lv3 {
+      font-size: 18px;
+      margin-top: 16px; } }
 
 .h--lv4 {
   font-size: 20px;
   color: #cccccc;
   margin-top: 18px; }
+  @media only screen and (max-width: 640px) {
+    .h--lv4 {
+      font-size: 16px; } }
 
 .para {
   font-size: 24px;
   padding-top: 64px;
   color: #cccccc;
   text-align: center; }
+  @media only screen and (max-width: 640px) {
+    .para {
+      font-size: 16px;
+      padding-top: 12px; } }
   .h--lv3 + .para, .h--lv4 + .para {
     margin-left: 12px; }
   .para--l {
@@ -230,6 +319,9 @@ header {
     padding-top: 14px;
     margin-bottom: 28px;
     text-align: left; }
+    @media only screen and (max-width: 640px) {
+      .para--l {
+        font-size: 14px; } }
 
 .link--ex {
   padding-right: 1.5em;
@@ -283,42 +375,60 @@ header {
 .tree {
   list-style: none;
   color: #cccccc; }
-  .tree--lv1 {
-    margin-top: 28px; }
-    .tree--lv1 > .tree-el {
-      font-size: 28px;
-      color: #f0e68c; }
+  h2 + .tree {
+    margin-top: 1em; }
+  .tree .tree-el {
+    line-height: 1.5em; }
+  .tree .tree-br {
+    margin-bottom: 1.5em; }
+  .tree--lv1 > .tree-el {
+    font-size: 28px;
+    color: #f0e68c;
+    margin-bottom: 1em; }
+    @media only screen and (max-width: 640px) {
+      .tree--lv1 > .tree-el {
+        font-size: 20px; } }
   .tree--lv2 {
-    margin-top: 22px;
-    margin-left: 12px;
-    margin-bottom: 36px; }
+    margin-left: 12px; }
     .tree--lv2 > .tree-el {
       font-size: 22px;
-      margin-bottom: 12px; }
+      margin-bottom: 0.5em; }
+      @media only screen and (max-width: 640px) {
+        .tree--lv2 > .tree-el {
+          font-size: 18px; } }
       .tree--lv2 > .tree-el::before {
-        content: "▽";
-        font-size: 16px;
-        vertical-align: 20%;
-        margin-right: 4px; }
+        content: "";
+        display: inline-block;
+        background-image: url("/common/img/listArrow.svg");
+        background-size: 0.8em 0.8em;
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        width: 1em;
+        height: 1em; }
   .tree--lv3 {
-    margin-left: 12px;
-    margin-top: 14px;
-    margin-bottom: 28px; }
+    margin-left: 32px; }
     .tree--lv3 > .tree-el {
       font-size: 16px;
-      margin-bottom: 8px; }
+      margin-bottom: 0; }
+      @media only screen and (max-width: 640px) {
+        .tree--lv3 > .tree-el {
+          font-size: 14px; } }
   .tree--lv4 {
-    margin-left: 12px;
-    margin-top: 14px;
-    margin-bottom: 28px; }
+    margin-left: 12px; }
     .tree--lv4 > .tree-el {
-      font-size: 16px;
-      margin-bottom: 8px; }
+      font-size: 16px; }
+      @media only screen and (max-width: 640px) {
+        .tree--lv4 > .tree-el {
+          font-size: 14px; } }
       .tree--lv4 > .tree-el::before {
-        content: "▽";
-        font-size: 14px;
-        vertical-align: center;
-        margin-right: 4px; }
+        content: "";
+        display: inline-block;
+        background-image: url("/common/img/listArrow.svg");
+        background-size: 0.8em 0.8em;
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        width: 1em;
+        height: 1em; }
 
 #js-slidePhoto {
   overflow: hidden; }

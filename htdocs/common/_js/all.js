@@ -195,5 +195,10 @@ $(function(){
   //modules init
   new SlidePhoto();
   EquelHeight();
+
+  $("#js-nav-btn").on("click", function(){
+    $("#js-nav").toggleClass("showing");
+    $("#js-nav-btn").toggleClass("showing");
+  });
 })
 

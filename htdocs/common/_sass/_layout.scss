@@ -1,10 +1,12 @@
 @import "general";
-@import "general";
 
 //sections
 
 .section{
   padding-bottom: 128px;
+  @include sp{
+    padding-bottom: 24px;
+  }
   .section+&{
     &::before{
       display: block;
@@ -71,41 +73,119 @@
 //header
 header{
   background-color: #010427;
-  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
   .header-inner{
     width: 100%;
     max-width: 960px;
     margin:0 auto;
     height: 40px;
-    .header-id{
-      float: left;
-      display: inline-block;
-      font-family:"Roboto";
-      font-weight: 700;
-      font-size: 32px;
-      color: white;
-      margin-top: 4px;
+    position: relative;
+    .header-inner-inner{
+      background-color: #010427;
+      height: 100%;
+      .header-id{
+        display: inline-block;
+        position: relative;
+        top: 4px;
+        left: 0;
+        font-family:"Roboto";
+        font-weight: 700;
+        font-size: 32px;
+        color: white;
+        letter-spacing: 0.1em;
+      }
+      .header-nav-btn{
+        display: none;
+      }
     }
     .header-nav{
-      float: right;
       display: block;
+      position: absolute;
+      top:0;
+      right: 0;
       height: 100%;
+      width: 50%;
       .header-nav-inner{
         list-style: none;
         display: table;
         height: 100%;
+        width: 100%;
         .header-nav-el{
           display: table-cell;
           vertical-align: middle;
           font-family:"Roboto";
-          font-size: 18px;
+          font-size: 22px;
           font-weight: 100;
-          width: 120px;
           &>a{
             color: white;
+          }
+        }
+      } 
+    }
+    @include sp{
+      .header-inner-inner{
+        position: relative;
+        z-index: 3;
+        .header-id{
+          font-size: 28px;
+          top: 6px;
+        }
+        .header-nav-btn{
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 40px;
+          width: 40px;
+          background-image: url("/common/img/headerMenu.svg");
+          background-position: 50% 50%;
+          background-repeat: no-repeat;
+          background-size: 28px 28px;
+        }
+      }
+      .header-nav{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height: auto;
+        .header-nav-inner{
+          transition: .3s;
+          display: block;
+          position: absolute;
+          top: -200%;
+          height: auto;
+          width: 100%;
+          z-index: 2;
+          background-color: #3F415A;
+          .header-nav-el{
+            display: block;
+            text-align: center;
+            width: 100%;
+            padding: 8px 0;
+            border-top: #010427 1px solid;
+            &:last-child{
+              border-bottom: #010427 1px solid;
+            } 
+            &>a{
+              display: block;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+        &.showing{
+          .header-nav-inner{
+            top: 100%;
           }
         }
       }
     }
   }
+}
+
+main{
+  margin-top: 40px;
 }
